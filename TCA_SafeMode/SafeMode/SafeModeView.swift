@@ -15,37 +15,13 @@ struct SafeModeView: View {
     var store: StoreOf<SafeModeFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            VStack {
-                titleView
-                //safeMode
-                VStack(spacing: 15) {
-                    Group {
-                        Button {
-                            viewStore.send(.userTappedDiagnosticDataButton)
-                        } label: {
-                            HStack {
-                                Image(systemName: "square.and.arrow.up")
-                                Text("Wysyłam dane diagnostyczne")
-                                Spacer()
-                            }
-                            .padding()
-                            .background(.white)
-                            .cornerRadius(10)
-                            .foregroundColor(.blue)
-                            .contentShape(Rectangle())
-                        }
-                        
-                        deleteDataButton
-                        deleteAndLogoutButton
-                    }
-                    safeModeInformationPanel
-                }
-                Spacer()
-            }
-            .padding()
-            .background(Color(UIColor.systemGroupedBackground))
+        VStack {
+            titleView
+            safeMode
+            Spacer()
         }
+        .padding()
+        .background(Color(UIColor.systemGroupedBackground))
     }
     
     var titleView: some View {
@@ -53,56 +29,69 @@ struct SafeModeView: View {
     }
     
     var safeMode: some View {
-        ScrollView {
-            if horizontalSizeClass == .compact {
-                VStack(spacing: 15) {
-                    Group {
-                        diagnosticDataButton
-                        deleteDataButton
-                        deleteAndLogoutButton
-                    }
-                    //.disabled(viewModel.isDiagnosticDataSending)
-                    safeModeInformationPanel
-                }
-            } else {
-                VStack(spacing: 15) {
-                    Group {
-                        diagnosticDataButton
-                        HStack() {
-                            deleteDataButton
-                            deleteAndLogoutButton
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            ScrollView {
+                if horizontalSizeClass == .compact {
+                    VStack(spacing: 15) {
+                        Group {
+                            createDiagnosticDataButton(with: viewStore)
+                            createDeleteDataButton(with: viewStore)
+                            createDeleteAndLogoutButton(with: viewStore)
                         }
+                        //.disabled(viewModel.isDiagnosticDataSending)
+                        safeModeInformationPanel
                     }
-                    //.disabled(viewModel.isDiagnosticDataSending)
-                    safeModeInformationPanel
+                } else {
+                    VStack(spacing: 15) {
+                        Group {
+                            createDiagnosticDataButton(with: viewStore)
+                            HStack() {
+                                createDeleteDataButton(with: viewStore)
+                                createDeleteAndLogoutButton(with: viewStore)
+                            }
+                        }
+                        //.disabled(viewModel.isDiagnosticDataSending)
+                        safeModeInformationPanel
+                    }
                 }
             }
         }
     }
     
-    private var diagnosticDataButton: some View {
+    @ViewBuilder
+    private func createDiagnosticDataButton(with viewStore:
+                                            ViewStore<SafeModeFeature.State,
+                                            SafeModeFeature.Action>) -> some View {
+    
         SafeModeActionButton(image: "square.and.arrow.up",
                              title: "Wysyłam dane diagnostyczne",
                              color: .blue) {
-            // action
+            viewStore.send(.userTappedDiagnosticDataButton)
         }
     }
     
-    private var deleteDataButton: some View {
+    
+    @ViewBuilder 
+    private func createDeleteDataButton(with viewStore:
+                                            ViewStore<SafeModeFeature.State,
+                                        SafeModeFeature.Action>) -> some View {
         SafeModeActionButton(image: "trash",
                              title: "Usuń dane",
                              footerText: "Wszystkie dane zgromadzone w aplikacji zostaną usunięte. Po ponownym uruchomieniu konieczna będzie pełna synchronizacja.",
                              color: .red) {
-            // action
+            viewStore.send(.userTappedDeleteDataButton)
         }
     }
-    
-    private var deleteAndLogoutButton: some View {
+
+    @ViewBuilder
+    private func createDeleteAndLogoutButton(with viewStore:
+                                             ViewStore<SafeModeFeature.State,
+                                         SafeModeFeature.Action>) -> some View {
         SafeModeActionButton(image: "rectangle.portrait.and.arrow.right",
                              title: "Usuń dane i wyloguj",
                              footerText: "Wszystkie dane zgromadzone w aplikacji zostaną usunięte i zostaniesz wylogowany z konta. Po ponownym uruchomieniu, zaloguj się.",
                              color: .red) {
-            // action
+            viewStore.send(.userTappedDeleteAndLogoutButton)
         }
     }
     
