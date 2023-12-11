@@ -14,6 +14,10 @@
 		933A3DA22B1FBC5600D9D3AB /* TCA_SafeModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A3DA12B1FBC5600D9D3AB /* TCA_SafeModeTests.swift */; };
 		933A3DAC2B1FBC5600D9D3AB /* TCA_SafeModeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A3DAB2B1FBC5600D9D3AB /* TCA_SafeModeUITests.swift */; };
 		933A3DAE2B1FBC5600D9D3AB /* TCA_SafeModeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A3DAD2B1FBC5600D9D3AB /* TCA_SafeModeUITestsLaunchTests.swift */; };
+		9365357B2B27BB54001736AE /* DeleteDataFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9365357A2B27BB54001736AE /* DeleteDataFeature.swift */; };
+		9365357D2B27BB7F001736AE /* DeleteDataFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9365357C2B27BB7F001736AE /* DeleteDataFeature+State.swift */; };
+		9365357F2B27BBAC001736AE /* DeleteDataFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9365357E2B27BBAC001736AE /* DeleteDataFeature+Action.swift */; };
+		936535812B27BBE7001736AE /* DeleteDataFeature+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936535802B27BBE7001736AE /* DeleteDataFeature+Reducer.swift */; };
 		DCDD47512B1FC3E500E7BAA9 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = DCDD47502B1FC3E500E7BAA9 /* ComposableArchitecture */; };
 		DCDD47662B1FCD7100E7BAA9 /* SafeModelTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD47652B1FCD7100E7BAA9 /* SafeModelTitleView.swift */; };
 		DCDD47682B1FCDB300E7BAA9 /* SafeModeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD47672B1FCDB300E7BAA9 /* SafeModeActionButton.swift */; };
@@ -53,6 +57,10 @@
 		933A3DA72B1FBC5600D9D3AB /* TCA_SafeModeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCA_SafeModeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		933A3DAB2B1FBC5600D9D3AB /* TCA_SafeModeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_SafeModeUITests.swift; sourceTree = "<group>"; };
 		933A3DAD2B1FBC5600D9D3AB /* TCA_SafeModeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_SafeModeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9365357A2B27BB54001736AE /* DeleteDataFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDataFeature.swift; sourceTree = "<group>"; };
+		9365357C2B27BB7F001736AE /* DeleteDataFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeleteDataFeature+State.swift"; sourceTree = "<group>"; };
+		9365357E2B27BBAC001736AE /* DeleteDataFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeleteDataFeature+Action.swift"; sourceTree = "<group>"; };
+		936535802B27BBE7001736AE /* DeleteDataFeature+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeleteDataFeature+Reducer.swift"; sourceTree = "<group>"; };
 		DCDD47652B1FCD7100E7BAA9 /* SafeModelTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModelTitleView.swift; sourceTree = "<group>"; };
 		DCDD47672B1FCDB300E7BAA9 /* SafeModeActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModeActionButton.swift; sourceTree = "<group>"; };
 		DCDD47692B1FCDCF00E7BAA9 /* SafeModeInformationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModeInformationPanel.swift; sourceTree = "<group>"; };
@@ -147,9 +155,21 @@
 			path = TCA_SafeModeUITests;
 			sourceTree = "<group>";
 		};
+		936535792B27BB3C001736AE /* DeleteDataFeature */ = {
+			isa = PBXGroup;
+			children = (
+				9365357A2B27BB54001736AE /* DeleteDataFeature.swift */,
+				9365357E2B27BBAC001736AE /* DeleteDataFeature+Action.swift */,
+				9365357C2B27BB7F001736AE /* DeleteDataFeature+State.swift */,
+				936535802B27BBE7001736AE /* DeleteDataFeature+Reducer.swift */,
+			);
+			path = DeleteDataFeature;
+			sourceTree = "<group>";
+		};
 		DCDD47522B1FC53F00E7BAA9 /* SafeMode */ = {
 			isa = PBXGroup;
 			children = (
+				936535792B27BB3C001736AE /* DeleteDataFeature */,
 				DCDD47552B1FC5D200E7BAA9 /* SafeModeFeature */,
 				DCDD476B2B1FCDF400E7BAA9 /* SafeModeView.swift */,
 			);
@@ -314,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCDD47662B1FCD7100E7BAA9 /* SafeModelTitleView.swift in Sources */,
+				9365357D2B27BB7F001736AE /* DeleteDataFeature+State.swift in Sources */,
 				933A3D932B1FBC5500D9D3AB /* ContentView.swift in Sources */,
 				DCDD47682B1FCDB300E7BAA9 /* SafeModeActionButton.swift in Sources */,
 				DCDD476C2B1FCDF400E7BAA9 /* SafeModeView.swift in Sources */,
@@ -321,7 +342,10 @@
 				DCDD47742B1FCE9100E7BAA9 /* SafeModeFeature+State.swift in Sources */,
 				DCDD47702B1FCE4100E7BAA9 /* SafeModeFeature.swift in Sources */,
 				DCDD47722B1FCE6600E7BAA9 /* SafeModeFeature+Reducer.swift in Sources */,
+				936535812B27BBE7001736AE /* DeleteDataFeature+Reducer.swift in Sources */,
 				DCDD47762B1FCEAA00E7BAA9 /* SafeModeFeature+Action.swift in Sources */,
+				9365357F2B27BBAC001736AE /* DeleteDataFeature+Action.swift in Sources */,
+				9365357B2B27BB54001736AE /* DeleteDataFeature.swift in Sources */,
 				DCDD476A2B1FCDCF00E7BAA9 /* SafeModeInformationPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
