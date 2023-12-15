@@ -5,6 +5,7 @@
 //  Created by Sebastian Ściuba on 05/12/2023.
 //
 
+import ComposableArchitecture
 import Foundation
 
 extension SafeModeFeature {
@@ -16,6 +17,14 @@ extension SafeModeFeature {
         case userTappedDeleteDataButton
         
         case userTappedDeleteAndLogoutButton
+        
+        case alert(PresentationAction<SafeModeAlert>)
+        
+        enum SafeModeAlert:Equatable {
+            case sendDiagnosticData
+            case deleteData
+            case deleteAndLogout
+        }
         
     }
 }

@@ -12,6 +12,8 @@ extension SafeModeFeature {
     
     struct State: Equatable {
         
+        @PresentationState var alert: AlertState<SafeModeFeature.Action.SafeModeAlert>?
+
     }
     
 }
