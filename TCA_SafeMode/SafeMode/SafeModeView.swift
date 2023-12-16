@@ -70,9 +70,11 @@ struct SafeModeView: View {
     
         SafeModeActionButton(image: "square.and.arrow.up",
                              title: "Wysyłam dane diagnostyczne",
-                             color: .blue) {
+                             color: .blue,
+                             isLoading: viewStore.isLoading) {
             viewStore.send(.userTappedDiagnosticDataButton)
         }
+                             .disabled(viewStore.isDiagnosticDataSending)
     }
     
     

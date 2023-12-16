@@ -15,18 +15,17 @@ extension SafeModeFeature: Reducer {
             switch action {
             case .userTappedDiagnosticDataButton:
                 print("userTappedDiagnosticDataButton")
-        
-                state.alert = AlertState(title: {
-                    TextState("Wyślij dane")
-                }, actions: {
-                    ButtonState(role: .destructive,
-                                action: .sendDiagnosticData) { TextState("Wyślij") }
-                    ButtonState(role: .cancel) { TextState("Anuluj") }
-                }, message: { TextState("Czy na pewno chcesz wysłać dane diagnostyczne?")
-                })
+            
+                state.alert = AlertState(
+                    title:  TextState("Wyślij dane"),
+                    message: TextState("Czy na pewno chcesz wysłać dane diagnostyczne?"),
+                    buttons: [
+                        .destructive(TextState("Wyślij"), action: .send(.sendDiagnosticData)),
+                        .cancel(TextState("Anuluj"))
+                    ])
                 
                 return .none
-                
+
             case .userTappedDeleteDataButton:
                 print("userTappedDeleteDataButton")
                 
@@ -45,7 +44,6 @@ extension SafeModeFeature: Reducer {
             case .userTappedDeleteAndLogoutButton:
                 print("userTappedDeleteAndLogoutButton")
                 
-                
                 state.alert = AlertState(title: {
                     TextState("Usuń dane i wyloguj")
                 }, actions: {
@@ -60,7 +58,12 @@ extension SafeModeFeature: Reducer {
                 
             case .alert:
                 return .none
+                
+            case .alert(.presented(.sendDiagnosticData)):
+                state.isLoading = true
+                return .none
             }
         }
     }
 }
+//ButtonState(role: .cancel) { TextState("Anuluj") }

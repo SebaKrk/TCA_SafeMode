@@ -180,9 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				DCDD476F2B1FCE4100E7BAA9 /* SafeModeFeature.swift */,
-				DCDD47712B1FCE6600E7BAA9 /* SafeModeFeature+Reducer.swift */,
 				DCDD47732B1FCE9100E7BAA9 /* SafeModeFeature+State.swift */,
 				DCDD47752B1FCEAA00E7BAA9 /* SafeModeFeature+Action.swift */,
+				DCDD47712B1FCE6600E7BAA9 /* SafeModeFeature+Reducer.swift */,
 			);
 			path = SafeModeFeature;
 			sourceTree = "<group>";

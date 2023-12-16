@@ -15,6 +15,7 @@ struct SafeModeActionButton: View {
     private let title: String
     private let footerText: String?
     private let color: Color
+    private var isLoading: Bool?
     
     let action: () -> Void
     
@@ -24,11 +25,13 @@ struct SafeModeActionButton: View {
          title: String,
          footerText: String? = nil,
          color: Color,
+         isLoading: Bool = false,
          action: @escaping () -> Void) {
         self.image = image
         self.title = title
         self.footerText = footerText
         self.color = color
+        self.isLoading = isLoading
         self.action = action
     }
     
@@ -41,6 +44,9 @@ struct SafeModeActionButton: View {
                     Image(systemName: image)
                     Text(title)
                     Spacer()
+                    if isLoading == true {
+                        ProgressView()
+                    }
                 }
                 .padding()
                 .background(.white)

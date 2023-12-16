@@ -13,7 +13,10 @@ extension SafeModeFeature {
     struct State: Equatable {
         
         @PresentationState var alert: AlertState<SafeModeFeature.Action.SafeModeAlert>?
-
+        
+        var isLoading: Bool = false
+        var isDiagnosticDataSending: Bool = false
+        var dataAreRemoving: Bool = false
     }
     
 }
