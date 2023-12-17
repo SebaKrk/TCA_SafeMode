@@ -27,7 +27,7 @@ extension SafeModeFeature: Reducer {
 
             case .executeSendDiagnosticData:
                 print("send diagnostic data")
-            
+                state.isDiagnosticDataSending = false
                 return .none
                 
             case .userTappedDeleteDataButton:
@@ -45,6 +45,7 @@ extension SafeModeFeature: Reducer {
                 
             case .executeDeleteData:
                 print("DeleteData")
+                state.isDataRemoving = false
                 
                 return .none
                 
@@ -63,18 +64,27 @@ extension SafeModeFeature: Reducer {
                 
             case .executeDeleteAndLogout:
                 print("DeleteAndLogout")
+                state.isDataRemoving = false
                 return .none
             
             case .alert(.presented(.sendDiagnosticData)):
                 print("executeDiagnosticDataAlertButton")
                 state.alert = nil
-                state.isLoading = true
-                return .run { send in
-                    await send(.executeSendDiagnosticData)
+                state.isDiagnosticDataSending = true
+                if state.isDiagnosticDataSending {
+                    return .run { send in
+                        try await Task.sleep(for: .seconds(5))
+                        await send(.executeSendDiagnosticData)
+                    }
                 }
+                return .none
+                //return .run { send in
+                //    await send(.executeSendDiagnosticData)
+                //}
                 
             case .alert(.presented(.deleteData)):
                 print("executeDeleteDataAlertButton")
+                state.isDataRemoving = true
                 state.alert = nil
                 return .run { send in
                     await send(.executeDeleteData)
@@ -82,6 +92,7 @@ extension SafeModeFeature: Reducer {
                 
             case .alert(.presented(.deleteAndLogout)):
                 print("executeDeleteAndLogoutAlertButton")
+                state.isDataRemoving = true
                 state.alert = nil
                 return .run { send in
                     await send(.executeDeleteAndLogout)
@@ -89,6 +100,7 @@ extension SafeModeFeature: Reducer {
                 
             case .alert(.dismiss):
                 print("dismissButton")
+                state.alert = nil
                 return .none
             }
         }
