@@ -18,6 +18,12 @@ extension SafeModeFeature {
         
         case userTappedDeleteAndLogoutButton
         
+        case executeSendDiagnosticData
+        
+        case executeDeleteData
+        
+        case executeDeleteAndLogout
+        
         case alert(PresentationAction<SafeModeAlert>)
         
         enum SafeModeAlert:Equatable {
