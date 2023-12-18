@@ -13,9 +13,10 @@ extension SafeModeFeature: Reducer {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+                
+                // MARK: - Buttons
             case .userTappedDiagnosticDataButton:
                 print("userTappedDiagnosticDataButton")
-                
                 state.alert = AlertState(
                     title:  TextState("Wyślij dane"),
                     message: TextState("Czy na pewno chcesz wysłać dane diagnostyczne?"),
@@ -23,11 +24,6 @@ extension SafeModeFeature: Reducer {
                         .destructive(TextState("Wyślij"), action: .send(.sendDiagnosticData)),
                         .cancel(TextState("Anuluj"))
                     ])
-                return .none
-
-            case .executeSendDiagnosticData:
-                print("send diagnostic data")
-                state.isDiagnosticDataSending = false
                 return .none
                 
             case .userTappedDeleteDataButton:
@@ -43,12 +39,6 @@ extension SafeModeFeature: Reducer {
                     ])
                 return .none
                 
-            case .executeDeleteData:
-                print("DeleteData")
-                state.isDataRemoving = false
-                
-                return .none
-                
             case .userTappedDeleteAndLogoutButton:
                 print("userTappedDeleteAndLogoutButton")
                 
@@ -62,11 +52,27 @@ extension SafeModeFeature: Reducer {
                     ])
                 return .none
                 
+                // MARK: - Execute
+            case .executeSendDiagnosticData:
+                print("send diagnostic data")
+                state.isDiagnosticDataSending = false
+                
+                return .run { send in
+                    await send(.diagnosticAlert(.presented(.failed)))
+                }
+                
             case .executeDeleteAndLogout:
                 print("DeleteAndLogout")
                 state.isDataRemoving = false
                 return .none
-            
+                
+            case .executeDeleteData:
+                print("DeleteData")
+                state.isDataRemoving = false
+                
+                return .none
+                
+                // MARK: - Alert
             case .alert(.presented(.sendDiagnosticData)):
                 print("executeDiagnosticDataAlertButton")
                 state.alert = nil
@@ -78,9 +84,6 @@ extension SafeModeFeature: Reducer {
                     }
                 }
                 return .none
-                //return .run { send in
-                //    await send(.executeSendDiagnosticData)
-                //}
                 
             case .alert(.presented(.deleteData)):
                 print("executeDeleteDataAlertButton")
@@ -101,6 +104,44 @@ extension SafeModeFeature: Reducer {
             case .alert(.dismiss):
                 print("dismissButton")
                 state.alert = nil
+                return .none
+                
+                // MARK: - DiagnosticAlert
+            case .diagnosticAlert(.presented(.done)):
+                print("done")
+                state.diagnosticAlert = AlertState(
+                    title: TextState("Wysyłanie danych przebiegło poprawnie"),
+                    dismissButton: .cancel(TextState("OK"))
+                )
+                
+                return .none
+                
+            case .diagnosticAlert(.presented(.failed)):
+                print("failed")
+                state.diagnosticAlert =  AlertState(
+                    title: TextState("Dane nie zostały wysłane"),
+                    buttons: [
+                        .destructive(TextState("Ponów"), action: .send(.retry)),
+                        .cancel(TextState("Anuluj"))
+                    ]
+                )
+                return .none
+                
+            case .diagnosticAlert(.presented(.retry)):
+                print("retry")
+                
+                state.isDiagnosticDataSending = true
+                if state.isDiagnosticDataSending {
+                    return .run { send in
+                        try await Task.sleep(for: .seconds(5))
+                        await send(.executeSendDiagnosticData)
+                    }
+                }
+                
+                return .none
+                
+            case .diagnosticAlert(.dismiss):
+                state.diagnosticAlert = nil
                 return .none
             }
         }

@@ -25,12 +25,19 @@ extension SafeModeFeature {
         case executeDeleteAndLogout
         
         case alert(PresentationAction<SafeModeAlert>)
-        
+    
         enum SafeModeAlert:Equatable {
             case sendDiagnosticData
             case deleteData
             case deleteAndLogout
         }
         
+        case diagnosticAlert(PresentationAction<DiagnosticAlertState>)
+        
+        enum DiagnosticAlertState {
+            case done
+            case retry
+            case failed
+        }
     }
 }

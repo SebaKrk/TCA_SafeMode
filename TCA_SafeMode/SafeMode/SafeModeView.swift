@@ -61,6 +61,12 @@ struct SafeModeView: View {
                 state: \.$alert,
                 action: {.alert($0)})
         )
+        
+        .alert(
+            store: self.store.scope(
+                state: \.$diagnosticAlert,
+                action: {.diagnosticAlert($0)})
+        )
     }
     
     @ViewBuilder

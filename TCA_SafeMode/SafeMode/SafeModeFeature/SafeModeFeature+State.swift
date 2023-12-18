@@ -14,6 +14,8 @@ extension SafeModeFeature {
         
         @PresentationState var alert: AlertState<SafeModeFeature.Action.SafeModeAlert>?
         
+        @PresentationState var diagnosticAlert: AlertState<SafeModeFeature.Action.DiagnosticAlertState>?
+        
         var isDiagnosticDataSending: Bool = false
         var isDataRemoving: Bool = false
     }
