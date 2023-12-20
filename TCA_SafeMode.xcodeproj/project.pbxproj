@@ -18,6 +18,13 @@
 		9365357D2B27BB7F001736AE /* DeleteDataFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9365357C2B27BB7F001736AE /* DeleteDataFeature+State.swift */; };
 		9365357F2B27BBAC001736AE /* DeleteDataFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9365357E2B27BBAC001736AE /* DeleteDataFeature+Action.swift */; };
 		936535812B27BBE7001736AE /* DeleteDataFeature+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936535802B27BBE7001736AE /* DeleteDataFeature+Reducer.swift */; };
+		DC857B3A2B332A6600CF2400 /* SafeModeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC857B392B332A6600CF2400 /* SafeModeService.swift */; };
+		DC857B3C2B332A8C00CF2400 /* SafeModeService+DependencyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC857B3B2B332A8C00CF2400 /* SafeModeService+DependencyKey.swift */; };
+		DC857B3F2B332B0C00CF2400 /* DefaultSafeModeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC857B3E2B332B0C00CF2400 /* DefaultSafeModeService.swift */; };
+		DC857B412B332B7100CF2400 /* SafeModeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC857B402B332B7100CF2400 /* SafeModeServiceProtocol.swift */; };
+		DC9FE6722B32DC500028E62D /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = DC9FE6712B32DC500028E62D /* Factory */; };
+		DC9FE6752B32DC950028E62D /* Container+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FE6742B32DC950028E62D /* Container+Extension.swift */; };
+		DC9FE6772B32DDB10028E62D /* DependencyValues+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FE6762B32DDB10028E62D /* DependencyValues+Extension.swift */; };
 		DCC6DAE32B302FAE0065C4BA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC6DAE22B302FAE0065C4BA /* ViewModel.swift */; };
 		DCDD47512B1FC3E500E7BAA9 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = DCDD47502B1FC3E500E7BAA9 /* ComposableArchitecture */; };
 		DCDD47662B1FCD7100E7BAA9 /* SafeModelTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD47652B1FCD7100E7BAA9 /* SafeModelTitleView.swift */; };
@@ -62,6 +69,12 @@
 		9365357C2B27BB7F001736AE /* DeleteDataFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeleteDataFeature+State.swift"; sourceTree = "<group>"; };
 		9365357E2B27BBAC001736AE /* DeleteDataFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeleteDataFeature+Action.swift"; sourceTree = "<group>"; };
 		936535802B27BBE7001736AE /* DeleteDataFeature+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeleteDataFeature+Reducer.swift"; sourceTree = "<group>"; };
+		DC857B392B332A6600CF2400 /* SafeModeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModeService.swift; sourceTree = "<group>"; };
+		DC857B3B2B332A8C00CF2400 /* SafeModeService+DependencyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeModeService+DependencyKey.swift"; sourceTree = "<group>"; };
+		DC857B3E2B332B0C00CF2400 /* DefaultSafeModeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSafeModeService.swift; sourceTree = "<group>"; };
+		DC857B402B332B7100CF2400 /* SafeModeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModeServiceProtocol.swift; sourceTree = "<group>"; };
+		DC9FE6742B32DC950028E62D /* Container+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Extension.swift"; sourceTree = "<group>"; };
+		DC9FE6762B32DDB10028E62D /* DependencyValues+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyValues+Extension.swift"; sourceTree = "<group>"; };
 		DCC6DAE22B302FAE0065C4BA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DCDD47652B1FCD7100E7BAA9 /* SafeModelTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModelTitleView.swift; sourceTree = "<group>"; };
 		DCDD47672B1FCDB300E7BAA9 /* SafeModeActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModeActionButton.swift; sourceTree = "<group>"; };
@@ -79,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCDD47512B1FC3E500E7BAA9 /* ComposableArchitecture in Frameworks */,
+				DC9FE6722B32DC500028E62D /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +140,7 @@
 				933A3D922B1FBC5500D9D3AB /* ContentView.swift */,
 				DCDD47562B1FC5ED00E7BAA9 /* Views */,
 				DCDD47522B1FC53F00E7BAA9 /* SafeMode */,
+				DC9FE6732B32DC680028E62D /* Dependencies */,
 				933A3D942B1FBC5600D9D3AB /* Assets.xcassets */,
 				933A3D962B1FBC5600D9D3AB /* Preview Content */,
 			);
@@ -168,6 +183,34 @@
 			path = DeleteDataFeature;
 			sourceTree = "<group>";
 		};
+		DC857B382B332A4600CF2400 /* CoreService */ = {
+			isa = PBXGroup;
+			children = (
+				DC857B392B332A6600CF2400 /* SafeModeService.swift */,
+				DC857B3B2B332A8C00CF2400 /* SafeModeService+DependencyKey.swift */,
+			);
+			path = CoreService;
+			sourceTree = "<group>";
+		};
+		DC857B3D2B332AF500CF2400 /* DefaultSafeMode */ = {
+			isa = PBXGroup;
+			children = (
+				DC857B402B332B7100CF2400 /* SafeModeServiceProtocol.swift */,
+				DC857B3E2B332B0C00CF2400 /* DefaultSafeModeService.swift */,
+			);
+			path = DefaultSafeMode;
+			sourceTree = "<group>";
+		};
+		DC9FE6732B32DC680028E62D /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				DC857B382B332A4600CF2400 /* CoreService */,
+				DC9FE6742B32DC950028E62D /* Container+Extension.swift */,
+				DC9FE6762B32DDB10028E62D /* DependencyValues+Extension.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 		DCDD47522B1FC53F00E7BAA9 /* SafeMode */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +218,7 @@
 				DCDD47552B1FC5D200E7BAA9 /* SafeModeFeature */,
 				DCDD476B2B1FCDF400E7BAA9 /* SafeModeView.swift */,
 				DCC6DAE22B302FAE0065C4BA /* ViewModel.swift */,
+				DC857B3D2B332AF500CF2400 /* DefaultSafeMode */,
 			);
 			path = SafeMode;
 			sourceTree = "<group>";
@@ -218,6 +262,7 @@
 			name = TCA_SafeMode;
 			packageProductDependencies = (
 				DCDD47502B1FC3E500E7BAA9 /* ComposableArchitecture */,
+				DC9FE6712B32DC500028E62D /* Factory */,
 			);
 			productName = TCA_SafeMode;
 			productReference = 933A3D8D2B1FBC5500D9D3AB /* TCA_SafeMode.app */;
@@ -293,6 +338,7 @@
 			mainGroup = 933A3D842B1FBC5500D9D3AB;
 			packageReferences = (
 				DCDD474F2B1FC3E500E7BAA9 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				DC9FE6702B32DC500028E62D /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = 933A3D8E2B1FBC5500D9D3AB /* Products */;
 			projectDirPath = "";
@@ -337,20 +383,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCDD47662B1FCD7100E7BAA9 /* SafeModelTitleView.swift in Sources */,
+				DC857B3F2B332B0C00CF2400 /* DefaultSafeModeService.swift in Sources */,
 				9365357D2B27BB7F001736AE /* DeleteDataFeature+State.swift in Sources */,
+				DC857B3C2B332A8C00CF2400 /* SafeModeService+DependencyKey.swift in Sources */,
 				933A3D932B1FBC5500D9D3AB /* ContentView.swift in Sources */,
 				DCDD47682B1FCDB300E7BAA9 /* SafeModeActionButton.swift in Sources */,
 				DCDD476C2B1FCDF400E7BAA9 /* SafeModeView.swift in Sources */,
 				933A3D912B1FBC5500D9D3AB /* TCA_SafeModeApp.swift in Sources */,
 				DCDD47742B1FCE9100E7BAA9 /* SafeModeFeature+State.swift in Sources */,
+				DC857B412B332B7100CF2400 /* SafeModeServiceProtocol.swift in Sources */,
 				DCDD47702B1FCE4100E7BAA9 /* SafeModeFeature.swift in Sources */,
 				DCDD47722B1FCE6600E7BAA9 /* SafeModeFeature+Reducer.swift in Sources */,
 				936535812B27BBE7001736AE /* DeleteDataFeature+Reducer.swift in Sources */,
 				DCC6DAE32B302FAE0065C4BA /* ViewModel.swift in Sources */,
 				DCDD47762B1FCEAA00E7BAA9 /* SafeModeFeature+Action.swift in Sources */,
 				9365357F2B27BBAC001736AE /* DeleteDataFeature+Action.swift in Sources */,
+				DC857B3A2B332A6600CF2400 /* SafeModeService.swift in Sources */,
+				DC9FE6772B32DDB10028E62D /* DependencyValues+Extension.swift in Sources */,
 				9365357B2B27BB54001736AE /* DeleteDataFeature.swift in Sources */,
 				DCDD476A2B1FCDCF00E7BAA9 /* SafeModeInformationPanel.swift in Sources */,
+				DC9FE6752B32DC950028E62D /* Container+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +734,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DC9FE6702B32DC500028E62D /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 		DCDD474F2B1FC3E500E7BAA9 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
@@ -693,6 +753,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DC9FE6712B32DC500028E62D /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC9FE6702B32DC500028E62D /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
 		DCDD47502B1FC3E500E7BAA9 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DCDD474F2B1FC3E500E7BAA9 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

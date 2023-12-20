@@ -5,8 +5,14 @@
 //  Created by Sebastian Ściuba on 05/12/2023.
 //
 
+import ComposableArchitecture
 import Foundation
 
-struct SafeModeFeature {}
+struct SafeModeFeature {
+
+    // MARK: - Dependencies
+    @Dependency(\.safeModeService) var safeModeService
+    
+}
 
 

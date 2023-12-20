@@ -58,17 +58,23 @@ extension SafeModeFeature: Reducer {
                 state.isDiagnosticDataSending = false
                 
                 return .run { send in
-                    await send(.diagnosticAlert(.presented(.failed)))
+                    if true { // cos tam cos ta
+                        await send(.diagnosticAlert(.presented(.done)))
+                    } else {
+                        await send(.diagnosticAlert(.presented(.failed)))
+                    }
                 }
                 
             case .executeDeleteAndLogout:
                 print("DeleteAndLogout")
                 state.isDataRemoving = false
+                executeDeleteAndLogout()
                 return .none
                 
             case .executeDeleteData:
                 print("DeleteData")
                 state.isDataRemoving = false
+                executeDeleteData()
                 
                 return .none
                 
@@ -79,6 +85,7 @@ extension SafeModeFeature: Reducer {
                 state.isDiagnosticDataSending = true
                 if state.isDiagnosticDataSending {
                     return .run { send in
+                        executeSendDiagnosticData()
                         try await Task.sleep(for: .seconds(5))
                         await send(.executeSendDiagnosticData)
                     }
@@ -145,5 +152,25 @@ extension SafeModeFeature: Reducer {
                 return .none
             }
         }
+    }
+}
+
+/// viewmodel   executeSendDiagnosticData()
+extension SafeModeFeature {
+    
+    private func executeSendDiagnosticData() {
+        safeModeService.sendDiagnosticData()
+    }
+    
+    private func executeDeleteAndLogout() {
+        safeModeService.removeAllDataFromUserDefaults()
+        safeModeService.removeAllDataFromKeyChain()
+        safeModeService.removeAllDataFromDocuments()
+    }
+    
+    private func executeDeleteData() {
+        safeModeService.clearUserDefaultsExceptLoggedIn()
+        safeModeService.removeDataFromKeychainWithoutTheGenericPassword()
+        safeModeService.removeAllDataFromDocuments()
     }
 }
