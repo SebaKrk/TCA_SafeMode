@@ -8,9 +8,16 @@
 import ComposableArchitecture
 import Foundation
 
+@Reducer
 struct SafeModeFeature {
+    
+    // MARK: - Typealiases
+    
+    typealias FeatureState = SafeModeFeature.State
+    typealias FeatureAction = SafeModeFeature.Action
 
     // MARK: - Dependencies
+    
     @Dependency(\.safeModeService) var safeModeService
     
 }

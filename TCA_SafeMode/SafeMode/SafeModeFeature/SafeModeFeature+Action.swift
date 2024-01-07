@@ -10,6 +10,7 @@ import Foundation
 
 extension SafeModeFeature {
     
+    @CasePathable
     enum Action: Equatable {
         
         case userTappedDiagnosticDataButton

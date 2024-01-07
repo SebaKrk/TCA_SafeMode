@@ -22,6 +22,11 @@
 		DC857B3C2B332A8C00CF2400 /* SafeModeService+DependencyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC857B3B2B332A8C00CF2400 /* SafeModeService+DependencyKey.swift */; };
 		DC857B3F2B332B0C00CF2400 /* DefaultSafeModeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC857B3E2B332B0C00CF2400 /* DefaultSafeModeService.swift */; };
 		DC857B412B332B7100CF2400 /* SafeModeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC857B402B332B7100CF2400 /* SafeModeServiceProtocol.swift */; };
+		DC9D4D022B4B32EC003E44B4 /* SafeModeFeature+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D4D012B4B32EC003E44B4 /* SafeModeFeature+Reducer.swift */; };
+		DC9D4D042B4B4063003E44B4 /* SafeModeFeature+ButtonsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D4D032B4B4063003E44B4 /* SafeModeFeature+ButtonsReducer.swift */; };
+		DC9D4D062B4B40B2003E44B4 /* SafeModeFeature+ExecuteReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D4D052B4B40B2003E44B4 /* SafeModeFeature+ExecuteReducer.swift */; };
+		DC9D4D082B4B4128003E44B4 /* SafeModeFeature+AlertReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D4D072B4B4128003E44B4 /* SafeModeFeature+AlertReducer.swift */; };
+		DC9D4D0A2B4B416C003E44B4 /* SafeModeFeature+DiagnosticAlertReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9D4D092B4B416C003E44B4 /* SafeModeFeature+DiagnosticAlertReducer.swift */; };
 		DC9FE6722B32DC500028E62D /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = DC9FE6712B32DC500028E62D /* Factory */; };
 		DC9FE6752B32DC950028E62D /* Container+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FE6742B32DC950028E62D /* Container+Extension.swift */; };
 		DC9FE6772B32DDB10028E62D /* DependencyValues+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FE6762B32DDB10028E62D /* DependencyValues+Extension.swift */; };
@@ -32,7 +37,6 @@
 		DCDD476A2B1FCDCF00E7BAA9 /* SafeModeInformationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD47692B1FCDCF00E7BAA9 /* SafeModeInformationPanel.swift */; };
 		DCDD476C2B1FCDF400E7BAA9 /* SafeModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD476B2B1FCDF400E7BAA9 /* SafeModeView.swift */; };
 		DCDD47702B1FCE4100E7BAA9 /* SafeModeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD476F2B1FCE4100E7BAA9 /* SafeModeFeature.swift */; };
-		DCDD47722B1FCE6600E7BAA9 /* SafeModeFeature+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD47712B1FCE6600E7BAA9 /* SafeModeFeature+Reducer.swift */; };
 		DCDD47742B1FCE9100E7BAA9 /* SafeModeFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD47732B1FCE9100E7BAA9 /* SafeModeFeature+State.swift */; };
 		DCDD47762B1FCEAA00E7BAA9 /* SafeModeFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD47752B1FCEAA00E7BAA9 /* SafeModeFeature+Action.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +77,11 @@
 		DC857B3B2B332A8C00CF2400 /* SafeModeService+DependencyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeModeService+DependencyKey.swift"; sourceTree = "<group>"; };
 		DC857B3E2B332B0C00CF2400 /* DefaultSafeModeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSafeModeService.swift; sourceTree = "<group>"; };
 		DC857B402B332B7100CF2400 /* SafeModeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModeServiceProtocol.swift; sourceTree = "<group>"; };
+		DC9D4D012B4B32EC003E44B4 /* SafeModeFeature+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeModeFeature+Reducer.swift"; sourceTree = "<group>"; };
+		DC9D4D032B4B4063003E44B4 /* SafeModeFeature+ButtonsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeModeFeature+ButtonsReducer.swift"; sourceTree = "<group>"; };
+		DC9D4D052B4B40B2003E44B4 /* SafeModeFeature+ExecuteReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeModeFeature+ExecuteReducer.swift"; sourceTree = "<group>"; };
+		DC9D4D072B4B4128003E44B4 /* SafeModeFeature+AlertReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeModeFeature+AlertReducer.swift"; sourceTree = "<group>"; };
+		DC9D4D092B4B416C003E44B4 /* SafeModeFeature+DiagnosticAlertReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeModeFeature+DiagnosticAlertReducer.swift"; sourceTree = "<group>"; };
 		DC9FE6742B32DC950028E62D /* Container+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Extension.swift"; sourceTree = "<group>"; };
 		DC9FE6762B32DDB10028E62D /* DependencyValues+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyValues+Extension.swift"; sourceTree = "<group>"; };
 		DCC6DAE22B302FAE0065C4BA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -81,7 +90,6 @@
 		DCDD47692B1FCDCF00E7BAA9 /* SafeModeInformationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModeInformationPanel.swift; sourceTree = "<group>"; };
 		DCDD476B2B1FCDF400E7BAA9 /* SafeModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModeView.swift; sourceTree = "<group>"; };
 		DCDD476F2B1FCE4100E7BAA9 /* SafeModeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeModeFeature.swift; sourceTree = "<group>"; };
-		DCDD47712B1FCE6600E7BAA9 /* SafeModeFeature+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeModeFeature+Reducer.swift"; sourceTree = "<group>"; };
 		DCDD47732B1FCE9100E7BAA9 /* SafeModeFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeModeFeature+State.swift"; sourceTree = "<group>"; };
 		DCDD47752B1FCEAA00E7BAA9 /* SafeModeFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeModeFeature+Action.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +209,18 @@
 			path = DefaultSafeMode;
 			sourceTree = "<group>";
 		};
+		DC9D4D002B4B32E0003E44B4 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				DC9D4D012B4B32EC003E44B4 /* SafeModeFeature+Reducer.swift */,
+				DC9D4D032B4B4063003E44B4 /* SafeModeFeature+ButtonsReducer.swift */,
+				DC9D4D052B4B40B2003E44B4 /* SafeModeFeature+ExecuteReducer.swift */,
+				DC9D4D072B4B4128003E44B4 /* SafeModeFeature+AlertReducer.swift */,
+				DC9D4D092B4B416C003E44B4 /* SafeModeFeature+DiagnosticAlertReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
 		DC9FE6732B32DC680028E62D /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,10 +246,10 @@
 		DCDD47552B1FC5D200E7BAA9 /* SafeModeFeature */ = {
 			isa = PBXGroup;
 			children = (
+				DC9D4D002B4B32E0003E44B4 /* Reducers */,
 				DCDD476F2B1FCE4100E7BAA9 /* SafeModeFeature.swift */,
 				DCDD47732B1FCE9100E7BAA9 /* SafeModeFeature+State.swift */,
 				DCDD47752B1FCEAA00E7BAA9 /* SafeModeFeature+Action.swift */,
-				DCDD47712B1FCE6600E7BAA9 /* SafeModeFeature+Reducer.swift */,
 			);
 			path = SafeModeFeature;
 			sourceTree = "<group>";
@@ -382,18 +402,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9D4D082B4B4128003E44B4 /* SafeModeFeature+AlertReducer.swift in Sources */,
 				DCDD47662B1FCD7100E7BAA9 /* SafeModelTitleView.swift in Sources */,
 				DC857B3F2B332B0C00CF2400 /* DefaultSafeModeService.swift in Sources */,
 				9365357D2B27BB7F001736AE /* DeleteDataFeature+State.swift in Sources */,
 				DC857B3C2B332A8C00CF2400 /* SafeModeService+DependencyKey.swift in Sources */,
 				933A3D932B1FBC5500D9D3AB /* ContentView.swift in Sources */,
 				DCDD47682B1FCDB300E7BAA9 /* SafeModeActionButton.swift in Sources */,
+				DC9D4D042B4B4063003E44B4 /* SafeModeFeature+ButtonsReducer.swift in Sources */,
 				DCDD476C2B1FCDF400E7BAA9 /* SafeModeView.swift in Sources */,
 				933A3D912B1FBC5500D9D3AB /* TCA_SafeModeApp.swift in Sources */,
 				DCDD47742B1FCE9100E7BAA9 /* SafeModeFeature+State.swift in Sources */,
+				DC9D4D022B4B32EC003E44B4 /* SafeModeFeature+Reducer.swift in Sources */,
 				DC857B412B332B7100CF2400 /* SafeModeServiceProtocol.swift in Sources */,
 				DCDD47702B1FCE4100E7BAA9 /* SafeModeFeature.swift in Sources */,
-				DCDD47722B1FCE6600E7BAA9 /* SafeModeFeature+Reducer.swift in Sources */,
+				DC9D4D062B4B40B2003E44B4 /* SafeModeFeature+ExecuteReducer.swift in Sources */,
 				936535812B27BBE7001736AE /* DeleteDataFeature+Reducer.swift in Sources */,
 				DCC6DAE32B302FAE0065C4BA /* ViewModel.swift in Sources */,
 				DCDD47762B1FCEAA00E7BAA9 /* SafeModeFeature+Action.swift in Sources */,
@@ -401,6 +424,7 @@
 				DC857B3A2B332A6600CF2400 /* SafeModeService.swift in Sources */,
 				DC9FE6772B32DDB10028E62D /* DependencyValues+Extension.swift in Sources */,
 				9365357B2B27BB54001736AE /* DeleteDataFeature.swift in Sources */,
+				DC9D4D0A2B4B416C003E44B4 /* SafeModeFeature+DiagnosticAlertReducer.swift in Sources */,
 				DCDD476A2B1FCDCF00E7BAA9 /* SafeModeInformationPanel.swift in Sources */,
 				DC9FE6752B32DC950028E62D /* Container+Extension.swift in Sources */,
 			);
