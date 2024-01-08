@@ -21,5 +21,3 @@ struct SafeModeFeature {
     @Dependency(\.safeModeService) var safeModeService
     
 }
-
-
